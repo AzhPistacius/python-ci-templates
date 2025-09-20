@@ -1,0 +1,58 @@
+[project.urls]
+Homepage = "https://github.com/AzhPistacius/python-ci-templates"
+Documentation = "https://github.com/AzhPistacius/python-ci-templates"
+Repository = "https://github.com/AzhPistacius/python-ci-templates"
+Issues = "https://github.com/AzhPistacius/python-ci-templates/issues"
+
+[project]
+name = "your-project-name" 
+version = "0.0.1"
+description = "template"
+authors = [
+    { name = "Your Name" }
+]
+readme = "README.md"
+requires-python = ">=3.12"
+
+# Основные зависимости
+dependencies = [
+    "numpy>=2.3.3",
+    "pandas>=2.3.2",
+]
+
+[project.optional-dependencies]
+# Основные инструменты разработки
+dev = [
+    "pytest>=8.0.0",
+    "pytest-asyncio>=0.23.0",
+    "pytest-cov>=5.0.0", 
+    "pytest-mock>=3.14.0",
+    "httpx>=0.27.0",
+    "pre-commit>=3.8.0",
+]
+
+# Линтеры и форматеры
+lint = [
+    "ruff>=0.6.0",
+    "mypy>=1.11.0",
+]
+
+# ML зависимости
+ml = [
+    "scikit-learn>=1.3.0",
+]
+
+# Документация
+docs = [
+    "mkdocs>=1.5.0",
+    "mkdocs-material>=9.0.0",
+    "mkdocstrings[python]>=0.24.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src"]
+
